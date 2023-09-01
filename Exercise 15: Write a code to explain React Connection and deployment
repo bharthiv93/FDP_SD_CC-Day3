@@ -1,0 +1,22 @@
+Code:
+Step 1: create a github repo
+Step 2: using terminal install gh-pages
+#install gh-pages package
+$ npm install --save gh-pages
+Step 3: include the below code in the package.json file
+"homepage": http://radhauma.github.io/ReactPortfolio
+step 4:
+"scripts": {
+  //...
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  //...
+  "build": "react-scripts build && cp build/index.html build/404.html", // this will prevent page reloads to give a  404 error
+}
+  
+Step 5:
+#create a new git repository
+$ git init
+git remote add origin https://github.com/radhauma/ReactPortfolio.git 
+#deploy application
+$ npm run deploy
